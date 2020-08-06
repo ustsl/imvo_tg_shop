@@ -25,7 +25,8 @@ class Imvo_shop_admin:
                 [two_step[1].strip()]
                 self.go()
             except:
-                self.result = 'Соблюдайте порядок синтаксиса - номер НОМЕР ЗАКАЗА название НАЗВАНИЕ цена ЦЕНА'
+                self.result = \
+                'Соблюдайте порядок синтаксиса - номер НОМЕР ЗАКАЗА название НАЗВАНИЕ цена ЦЕНА'
            
     def go(self):
         good = self.good
@@ -44,5 +45,5 @@ class Imvo_shop_admin:
 
             with open(os.path.join('files', 'goods.json'), 'w', encoding='utf-8') as f:
                 json.dump(goods, f, ensure_ascii=False, indent=4)         
-        print ('тест')
         self.result = 'Добавлен новый товар'
+        self.goods = goods
